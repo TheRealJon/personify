@@ -1,0 +1,151 @@
+// Create any partial less files you want and import them here or just import patternfly styles and add your less after
+//import patternfly LESS variables into your project
+// @import "../node_modules/patternfly/dist/less/patternfly.less";
+// @import "../node_modules/patternfly/dist/less/patternfly-additions.less";
+
+@import '../node_modules/patternfly/dist/less/patternfly.less';
+@import '../node_modules/patternfly/dist/less/patternfly-additions.less';
+
+img {
+  max-width: 100%;
+}
+.list-view-pf-left img {
+  max-width: 2em;
+}
+.breadcrumb {
+  background-color: inherit;
+}
+
+.pg-persona {
+  display:grid;
+  grid-template:  "roles-title quote-title"
+                  "roles quote  "
+                  "skills-title day-title "
+                  "skills day "
+                  "dangers-title success-title "
+                  "dangers success"
+                  "id-title network-title"
+                  "id network";
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: .5em;
+  > * {
+      background-color: @color-pf-black-100;
+  }
+}
+
+@media (min-width: 800px) {
+  .pg-persona {
+    display:grid;
+    grid-template:  "roles-title quote-title quote-title  "
+                    "roles quote quote  "
+                    "skills-title success-title dangers-title"
+                    "skills success dangers"
+                    "id-title day-title network-title"
+                    "id day network";
+    grid-template-columns: 1fr 2fr 2fr;
+    grid-column-gap: 1em;
+    // > * {
+    //     background-color: @color-pf-black-150;
+    // }
+  }
+
+}
+
+.pg-persona--card {
+  grid-template:
+  "id"
+  "roles"
+  "quote"
+  "skills-title"
+  "skills"
+  "success-title"
+  "success"
+  "dangers-title"
+  "dangers"
+  "day-title"
+  "day"
+  "network-title"
+  "network";
+grid-template-columns: 1fr;
+grid-column-gap: .5em;
+border: 1px solid @color-pf-black-300;
+padding: 1em;
+
+  > * {
+    background-color: transparent;
+  }
+
+  h3 {
+    font-size: 1em;
+    color: @color-pf-black-300;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+}
+.pg-title {
+  align-self: end;
+  background-color: inherit;
+}
+.pg-title--card {
+  font-size: 1em;
+}
+
+.pg-title--roles {
+  grid-area: roles-title;
+}
+.pg-title--quote {
+  grid-area: quote-title;
+}
+
+.pg-title--skills {
+  grid-area: skills-title;
+}
+.pg-title--success {
+  grid-area: success-title;
+}
+.pg-title--dangers {
+  grid-area: dangers-title;
+}
+.pg-title--id {
+  grid-area: id-title;
+}
+.pg-title--day {
+  grid-area: day-title;
+}
+.pg-title--network {
+  grid-area: network-title;
+}
+.pg-roles {
+  grid-area: roles;
+}
+.pg-quote {
+  grid-area: quote;
+}
+.pg-skills {
+  grid-area: skills;
+}
+.pg-success {
+  grid-area: success;
+}
+.pg-dangers {
+  grid-area: dangers;
+}
+.pg-id {
+  grid-area: id;
+}
+.pg-day {
+  grid-area: day;
+}
+.pg-network {
+  grid-area: network;
+}
+
+.pg-id__avatar {
+  background: transparent;
+}
+.pg-id__avatar img {
+  border-radius: 50%;
+}
+.pg-id__avatar--card img {
+  width: 3em;
+}
